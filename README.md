@@ -1,5 +1,10 @@
 # Defra Ruby Address
 
+[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-address.svg?branch=master)](https://travis-ci.com/DEFRA/defra-ruby-address)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1a0b68efe00098e0734f/maintainability)](https://codeclimate.com/github/DEFRA/defra-ruby-address/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1a0b68efe00098e0734f/test_coverage)](https://codeclimate.com/github/DEFRA/defra-ruby-address/test_coverage)
+[![security](https://hakiri.io/github/DEFRA/defra-ruby-address/master.svg)](https://hakiri.io/github/DEFRA/defra-ruby-address/master)
+[![Gem Version](https://badge.fury.io/rb/defra_ruby_address.svg)](https://badge.fury.io/rb/defra_ruby_address)
 [![Licence](https://img.shields.io/badge/Licence-OGLv3-blue.svg)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
 
 Currently there are a number of Rails based digital services in Defra, talking to a set of address lookups. Behind the scenes these lookups all talk to [OS Places](https://developer.ordnancesurvey.co.uk/os-places-api), yet still for whatever reason we have multiple projects fulfilling this role 😩!
