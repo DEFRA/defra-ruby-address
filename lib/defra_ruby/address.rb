@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "address/configuration"
+require_relative "address/response"
 
 module DefraRuby
   module Address
