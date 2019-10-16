@@ -3,10 +3,10 @@
 module DefraRuby
   module Address
     class Configuration
-      attr_accessor :host
+      attr_accessor :timeout, :host
 
       def initialize
-        @timeout = nil
+        @timeout = 3
       end
     end
   end
