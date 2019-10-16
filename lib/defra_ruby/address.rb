@@ -3,6 +3,9 @@
 require_relative "address/configuration"
 require_relative "address/response"
 
+require_relative "address/services/base_address_service"
+require_relative "address/services/os_places_address_lookup_service"
+
 module DefraRuby
   module Address
     class << self
