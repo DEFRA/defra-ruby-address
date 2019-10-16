@@ -8,6 +8,7 @@ module DefraRuby
       it "sets the appropriate default config settings" do
         fresh_config = described_class.new
 
+        expect(fresh_config.timeout).to eq(3)
         expect(fresh_config.host).to be_nil
       end
     end
