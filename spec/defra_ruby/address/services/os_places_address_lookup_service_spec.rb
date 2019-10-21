@@ -41,6 +41,8 @@ module DefraRuby
           }].to_json
         end
 
+        include_examples "handle request errors"
+
         context "when the postcode is valid" do
 
           it "returns a successful response" do
