@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "address/configuration"
+require_relative "address/no_match_error"
 require_relative "address/response"
 
 require_relative "address/services/base_address_service"

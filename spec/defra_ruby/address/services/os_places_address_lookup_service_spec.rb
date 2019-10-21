@@ -71,7 +71,7 @@ module DefraRuby
               expect(response).to be_a(Response)
               expect(response).to_not be_successful
               expect(response.results).to be_empty
-              expect(response.error).to_not be_nil
+              expect(response.error).to be_an_instance_of(DefraRuby::Address::NoMatchError)
             end
           end
 
@@ -87,7 +87,7 @@ module DefraRuby
               expect(response).to be_a(Response)
               expect(response).to_not be_successful
               expect(response.results).to be_empty
-              expect(response.error).to_not be_nil
+              expect(response.error).to_not be_an_instance_of(DefraRuby::Address::NoMatchError)
             end
           end
         end
