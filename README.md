@@ -94,7 +94,7 @@ puts response.results.first["uprn"] # "340116"
 
 The expected format of each result is
 
-```json
+```ruby
 {
   "moniker"=>"340116",
   "uprn"=>"340116",
