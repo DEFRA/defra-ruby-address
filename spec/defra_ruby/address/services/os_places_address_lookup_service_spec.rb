@@ -63,7 +63,7 @@ module DefraRuby
             let(:postcode) { "BS1 9XX" }
             let(:body) { '{"error":{"statuscode":400,"message":"Parameters are not valid"}}' }
 
-            it "returns a failed response" do
+            it "returns a 'NoMatchError'" do
               response = described_class.run(postcode)
 
               expect(a_request(:get, url)).to have_been_made.at_most_once
@@ -87,7 +87,7 @@ module DefraRuby
               expect(response).to be_a(Response)
               expect(response).to_not be_successful
               expect(response.results).to be_empty
-              expect(response.error).to_not be_an_instance_of(DefraRuby::Address::NoMatchError)
+              expect(response.error).to be_an_instance_of(RestClient::BadRequest)
             end
           end
         end
