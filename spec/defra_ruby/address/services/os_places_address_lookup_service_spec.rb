@@ -14,32 +14,7 @@ module DefraRuby
         let(:postcode) { "BS1 5AH" }
         let(:url) { "http://localhost:8005/addresses?postcode=#{postcode}" }
         let(:code) { 200 }
-        let(:body) do
-          [{
-            "moniker" => "340116",
-            "uprn" => "340116",
-            "lines" => ["NATURAL ENGLAND", "DEANERY ROAD"],
-            "town" => "BRISTOL",
-            "postcode" => "BS1 5AH",
-            "easting" => "358205",
-            "northing" => "172708",
-            "country" => "",
-            "dependentLocality" => "",
-            "dependentThroughfare" => "",
-            "administrativeArea" => "BRISTOL",
-            "localAuthorityUpdateDate" => "",
-            "royalMailUpdateDate" => "",
-            "partial" => "NATURAL ENGLAND, HORIZON HOUSE, DEANERY ROAD, BRISTOL, BS1 5AH",
-            "subBuildingName" => "",
-            "buildingName" => "HORIZON HOUSE",
-            "thoroughfareName" => "DEANERY ROAD",
-            "organisationName" => "NATURAL ENGLAND",
-            "buildingNumber" => "",
-            "postOfficeBoxNumber" => "",
-            "departmentName" => "",
-            "doubleDependentLocality" => ""
-          }].to_json
-        end
+        let(:body) { File.read("spec/fixtures/os_places_address_lookup_valid.json") }
 
         include_examples "handle request errors"
 
@@ -61,7 +36,7 @@ module DefraRuby
 
           context "because it is not found" do
             let(:postcode) { "BS1 9XX" }
-            let(:body) { '{"error":{"statuscode":400,"message":"Parameters are not valid"}}' }
+            let(:body) { File.read("spec/fixtures/os_places_address_lookup_not_found.json") }
 
             it "returns a 'NoMatchError'" do
               response = described_class.run(postcode)
@@ -77,7 +52,7 @@ module DefraRuby
 
           context "because it is blank" do
             let(:postcode) { "" }
-            let(:body) { '{"errors":["query param postcode may not be empty"]}' }
+            let(:body) { File.read("spec/fixtures/os_places_address_lookup_blank.json") }
 
             it "returns a failed response" do
               response = described_class.run(postcode)
