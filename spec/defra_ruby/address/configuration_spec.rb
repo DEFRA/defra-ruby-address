@@ -10,6 +10,8 @@ module DefraRuby
 
         expect(fresh_config.timeout).to eq(3)
         expect(fresh_config.host).to be_nil
+        expect(fresh_config.client_id).to eq(0)
+        expect(fresh_config.key).to eq("client1")
       end
     end
   end

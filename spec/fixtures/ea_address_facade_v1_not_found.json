@@ -1,0 +1,8 @@
+{
+  "totalMatches": 0,
+  "startMatch": null,
+  "endMatch": null,
+  "uri_to_supplier": "https://api.ordnancesurvey.co.uk/places/v1/addresses/postcode?lr=EN&postcode=bs19xx&maxresults=100&dataset=DPA",
+  "uri_from_client": "stub",
+  "results": []
+}

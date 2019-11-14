@@ -4,17 +4,19 @@ require "spec_helper"
 
 module DefraRuby
   module Address
-    RSpec.describe OsPlacesAddressLookupService do
+    RSpec.describe EaAddressFacadeV1Service do
       describe "#run" do
         before do
           DefraRuby::Address.configure { |c| c.host = "http://localhost:8005/" }
           stub_request(:get, url).to_return(status: code, body: body)
         end
 
+        let(:client_id) { DefraRuby::Address.configuration.client_id }
+        let(:key) { DefraRuby::Address.configuration.key }
         let(:postcode) { "BS1 5AH" }
-        let(:url) { "http://localhost:8005/addresses?postcode=#{postcode}" }
+        let(:url) { "http://localhost:8005/address-service/v1/addresses/postcode?client-id=#{client_id}&key=#{key}&postcode=#{postcode}" }
         let(:code) { 200 }
-        let(:body) { File.read("spec/fixtures/os_places_address_lookup_valid.json") }
+        let(:body) { File.read("spec/fixtures/ea_address_facade_v1_valid.json") }
 
         include_examples "handle request errors"
 
@@ -32,11 +34,9 @@ module DefraRuby
         end
 
         context "when the postcode is invalid" do
-          let(:code) { 400 }
-
           context "because it is not found" do
             let(:postcode) { "BS1 9XX" }
-            let(:body) { File.read("spec/fixtures/os_places_address_lookup_not_found.json") }
+            let(:body) { File.read("spec/fixtures/ea_address_facade_v1_not_found.json") }
 
             it "returns a 'NoMatchError'" do
               response = described_class.run(postcode)
@@ -52,7 +52,8 @@ module DefraRuby
 
           context "because it is blank" do
             let(:postcode) { "" }
-            let(:body) { File.read("spec/fixtures/os_places_address_lookup_blank.json") }
+            let(:code) { 400 }
+            let(:body) { File.read("spec/fixtures/ea_address_facade_v1_blank.json") }
 
             it "returns a failed response" do
               response = described_class.run(postcode)
