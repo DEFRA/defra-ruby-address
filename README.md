@@ -126,11 +126,38 @@ The expected format of each result is
 
 ### EA Address Facade v1.0
 
-> Not yet implemented
-
 This was the second address lookup, built as a means of trying to ensure all services follow the Environment Agency address standard. Its also included general performance and security updates.
 
-This version is currently used by the [Waste Exemptions Registration service](https://github.com/DEFRA/ruby-services-team/tree/master/services/wex) and the [Flood Risk Activity Exemptions service](https://github.com/DEFRA/ruby-services-team/tree/master/services/frae)
+This version is currently used by the [Waste Exemptions Registration service](https://github.com/DEFRA/ruby-services-team/tree/master/services/wex) and the [Flood Risk Activity Exemptions service](https://github.com/DEFRA/ruby-services-team/tree/master/services/frae).
+
+```ruby
+response = DefraRuby::Address::EaAddressFacadeV1Service.run("BS1 5AH")
+
+puts response.results.first["uprn"] # "340116"
+```
+
+The expected format of each result is
+
+```ruby
+{
+  "uprn"=>340116,
+  "address"=>"ENVIRONMENT AGENCY, HORIZON HOUSE, DEANERY ROAD, BRISTOL, BS1 5AH",
+  "organisation"=>"ENVIRONMENT AGENCY",
+  "premises"=>"HORIZON HOUSE",
+  "street_address"=>"DEANERY ROAD",
+  "locality"=>nil,
+  "city"=>"BRISTOL",
+  "postcode"=>"BS1 5AH",
+  "x"=>"358205.03",
+  "y"=>"172708.07",
+  "coordinate_system"=>nil,
+  "state_date"=>"12/10/2009",
+  "blpu_state_code"=>nil,
+  "postal_address_code"=>nil,
+  "logical_status_code"=>nil,
+  "source_data_type"=>"dpa"
+}
+```
 
 ### EA Address Facade v1.1
 
