@@ -1,0 +1,14 @@
+{
+  "header": {
+    "totalMatches": 0,
+    "startMatch": null,
+    "endMatch": null,
+    "query": "postcode=BS1 9XX",
+    "language": "EN",
+    "dataset": "DPA",
+    "epoch": "70",
+    "uriToSupplier": "https://api.ordnancesurvey.co.uk/places/v1/addresses/postcode?lr=EN&postcode=BS1%209XX&fq=logical_status_code%3A1&dataset=DPA",
+    "uriFromClient": ""
+  },
+  "results": []
+}

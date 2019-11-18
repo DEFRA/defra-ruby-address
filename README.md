@@ -161,9 +161,54 @@ The expected format of each result is
 
 ### EA Address Facade v1.1
 
-> Not yet implemented
-
 This was an iteration of the EA Address Facade. Mainly the format of the request changed as the lookup had been redesigned to run as a single instance for multiple services, whilst allowing each service to differentiate where the calls were coming from.
+
+Currently no services are using this version, but the intention is to move the [Waste Exemptions Registration service](https://github.com/DEFRA/ruby-services-team/tree/master/services/wex), [Flood Risk Activity Exemptions service](https://github.com/DEFRA/ruby-services-team/tree/master/services/frae) and [Waste Carriers Registration service](https://github.com/DEFRA/ruby-services-team/tree/master/services/wcr) to it.
+
+```ruby
+response = DefraRuby::Address::EaAddressFacadeV11Service.run("BS1 5AH")
+
+puts response.results.first["uprn"] # "340116"
+```
+
+The expected format of each result is
+
+```ruby
+{
+  "uprn"=>340116,
+  "address"=>"ENVIRONMENT AGENCY, HORIZON HOUSE, DEANERY ROAD, BRISTOL, BS1 5AH",
+  "organisation"=>"ENVIRONMENT AGENCY",
+  "premises"=>"HORIZON HOUSE",
+  "street_address"=>"DEANERY ROAD",
+  "locality"=>nil,
+  "city"=>"BRISTOL",
+  "postcode"=>"BS1 5AH",
+  "country"=>"United Kingdom",
+  "x"=>358205.03,
+  "y"=>172708.06,
+  "coordinate_system"=>nil,
+  "blpu_state_date"=>"12/10/2009",
+  "blpu_state_code"=>2,
+  "postal_address_code"=>"D",
+  "logical_status_code"=>1,
+  "source_data_type"=>"dpa",
+  "blpu_state_code_description"=>"In use",
+  "classification_code"=>"CO01",
+  "classification_code_description"=>"Office / Work Studio",
+  "lpi_logical_status_code"=>nil,
+  "lpi_logical_status_code_description"=>nil,
+  "match"=>1.0,
+  "match_description"=>"EXACT",
+  "topography_layer_toid"=>"osgb1000002529079737",
+  "parent_uprn"=>nil,
+  "last_update_date"=>"10/02/2016",
+  "status"=>"APPROVED",
+  "entry_date"=>"12/10/2009",
+  "postal_address_code_description"=>"A record which is linked to PAF",
+  "usrn"=>nil,
+  "language"=>"EN"
+}
+```
 
 ## Contributing to this project
 
