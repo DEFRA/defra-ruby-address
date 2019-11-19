@@ -26,6 +26,8 @@ begin
   require "github_changelog_generator/task"
 
   GitHubChangelogGenerator::RakeTask.new :changelog do |config|
+    config.user = "defra"
+    config.project = "defra-ruby-address"
   end
 rescue LoadError
   # no changelog available
