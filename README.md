@@ -1,8 +1,8 @@
 # Defra Ruby Address
 
 [![Build Status](https://travis-ci.com/DEFRA/defra-ruby-address.svg?branch=master)](https://travis-ci.com/DEFRA/defra-ruby-address)
-[![Maintainability](https://api.codeclimate.com/v1/badges/1a0b68efe00098e0734f/maintainability)](https://codeclimate.com/github/DEFRA/defra-ruby-address/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/1a0b68efe00098e0734f/test_coverage)](https://codeclimate.com/github/DEFRA/defra-ruby-address/test_coverage)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-address&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-address)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-address&metric=coverage)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-address)
 [![security](https://hakiri.io/github/DEFRA/defra-ruby-address/master.svg)](https://hakiri.io/github/DEFRA/defra-ruby-address/master)
 [![Gem Version](https://badge.fury.io/rb/defra_ruby_address.svg)](https://badge.fury.io/rb/defra_ruby_address)
 [![Licence](https://img.shields.io/badge/Licence-OGLv3-blue.svg)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
