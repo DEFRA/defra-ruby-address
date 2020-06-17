@@ -1,9 +1,9 @@
 # Defra Ruby Address
 
-[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-address.svg?branch=master)](https://travis-ci.com/DEFRA/defra-ruby-address)
+[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-address.svg?branch=main)](https://travis-ci.com/DEFRA/defra-ruby-address)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-address&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-address)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-address&metric=coverage)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-address)
-[![security](https://hakiri.io/github/DEFRA/defra-ruby-address/master.svg)](https://hakiri.io/github/DEFRA/defra-ruby-address/master)
+[![security](https://hakiri.io/github/DEFRA/defra-ruby-address/main.svg)](https://hakiri.io/github/DEFRA/defra-ruby-address/main)
 [![Gem Version](https://badge.fury.io/rb/defra_ruby_address.svg)](https://badge.fury.io/rb/defra_ruby_address)
 [![Licence](https://img.shields.io/badge/Licence-OGLv3-blue.svg)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
 
