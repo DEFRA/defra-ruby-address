@@ -3,8 +3,7 @@
 module DefraRuby
   module Address
     class Response
-      attr_reader :error
-      attr_reader :results
+      attr_reader :error, :results
 
       def initialize(response_exe)
         @success = true
