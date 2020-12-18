@@ -1,3 +1,4 @@
+# rubocop:disable Gemspec/RequiredRubyVersion
 # frozen_string_literal: true
 
 $LOAD_PATH.push File.expand_path("lib", __dir__)
@@ -51,3 +52,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "simplecov", "~> 0.17.1"
   spec.add_development_dependency "webmock", "~> 3.4"
 end
+# rubocop:enable Gemspec/RequiredRubyVersion
