@@ -1,6 +1,6 @@
 # Defra Ruby Address
 
-[![Build Status](https://travis-ci.com/DEFRA/defra-ruby-address.svg?branch=main)](https://travis-ci.com/DEFRA/defra-ruby-address)
+![Build Status](https://github.com/DEFRA/defra-ruby-address/workflows/CI/badge.svg?branch=main)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-address&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-address)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_defra-ruby-address&metric=coverage)](https://sonarcloud.io/dashboard?id=DEFRA_defra-ruby-address)
 [![security](https://hakiri.io/github/DEFRA/defra-ruby-address/main.svg)](https://hakiri.io/github/DEFRA/defra-ruby-address/main)
