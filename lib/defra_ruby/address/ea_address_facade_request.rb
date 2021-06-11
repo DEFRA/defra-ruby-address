@@ -30,6 +30,8 @@ module DefraRuby
       end
 
       def response_exe
+        Rails.logger.info "DRA: MAKING REQUEST"
+        Rails.logger.info url
         lambda do
           response = RestClient::Request.execute(
             method: :get,
@@ -37,6 +39,7 @@ module DefraRuby
             timeout: DefraRuby::Address.configuration.timeout
           )
           results = JSON.parse(response)["results"]
+          Rails.logger.info "DRA: results: #{results}"
 
           raise DefraRuby::Address::NoMatchError if results.empty?
 

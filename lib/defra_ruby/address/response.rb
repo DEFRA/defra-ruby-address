@@ -24,6 +24,9 @@ module DefraRuby
       def capture_response(response_exe)
         @results = response_exe.call
       rescue StandardError => e
+        puts "DRA: error happened!"
+        puts e.message
+        puts e.backtrace
         @error = e
         @success = false
       end
