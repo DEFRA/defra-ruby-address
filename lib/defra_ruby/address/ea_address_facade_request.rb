@@ -31,7 +31,8 @@ module DefraRuby
 
       def response_exe
         Rails.logger.info "DRA: MAKING REQUEST"
-        Rails.logger.info url
+        Rails.logger.info "timeout: #{DefraRuby::Address.configuration.timeout}"
+        Rails.logger.info url.to_s
         lambda do
           response = RestClient::Request.execute(
             method: :get,
