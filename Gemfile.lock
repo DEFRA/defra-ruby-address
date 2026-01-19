@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    defra_ruby_address (0.1.0)
+    defra_ruby_address (0.3.0)
       rest-client (~> 2.0)
 
 GEM
