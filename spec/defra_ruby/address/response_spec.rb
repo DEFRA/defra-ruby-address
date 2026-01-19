@@ -8,7 +8,7 @@ module DefraRuby
       subject(:response) { described_class.new(response_exe) }
 
       let(:successful) { -> { [{ "postcode" => "BS1 5AH" }] } }
-      let(:errored) { -> { raise "Boom!" } }
+      let(:errored) { -> { raise StandardError, "Boom!" } }
 
       describe "#successful?" do
         context "when the response throws an error" do
