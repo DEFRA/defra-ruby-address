@@ -5,7 +5,7 @@ require "spec_helper"
 module DefraRuby
   module Address
     RSpec.describe Configuration do
-      it "sets the appropriate default config settings" do
+      it "sets the appropriate default config settings", :aggregate_failures do
         fresh_config = described_class.new
 
         expect(fresh_config.timeout).to eq(3)

@@ -15,7 +15,7 @@ module DefraRuby
           let(:response_exe) { errored }
 
           it "returns false" do
-            expect(response).to_not be_successful
+            expect(response).not_to be_successful
           end
         end
 
@@ -40,7 +40,7 @@ module DefraRuby
         context "when the response does not throw an error" do
           let(:response_exe) { successful }
 
-          it "returns a JSON array" do
+          it "returns a JSON array", :aggregate_failures do
             expect(response.results).to be_instance_of(Array)
             expect(response.results[0]).to be_instance_of(Hash)
             expect(response.results[0]["postcode"]).to eq("BS1 5AH")
