@@ -22,11 +22,11 @@ group :development, :test do
   # byebug
   gem "pry-byebug"
   gem "rake"
-  gem "rspec", "~> 3.0"
+  gem "rspec"
   gem "rubocop"
   gem "rubocop-factory_bot"
   gem "rubocop-rake"
   gem "rubocop-rspec"
-  gem "simplecov", "~> 0.17.1"
-  gem "webmock", "~> 3.4"
+  gem "simplecov", "~> 0.22.0"
+  gem "webmock"
 end
