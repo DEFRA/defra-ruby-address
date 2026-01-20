@@ -48,8 +48,5 @@ coverage
 # rspec run
 /spec/reports
 
-# Ignore Gemfile.lock as this is a Ruby gem
-Gemfile.lock
-
 # Ignore rvm gemset file
 .ruby-gemset
