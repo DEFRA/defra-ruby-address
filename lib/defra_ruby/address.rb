@@ -8,6 +8,7 @@ require_relative "address/response"
 require_relative "address/services/base_service"
 require_relative "address/services/ea_address_facade_v1_1_service"
 require_relative "address/services/ea_address_facade_v1_service"
+require_relative "address/services/os_api_address_lookup_v1_service"
 require_relative "address/services/os_places_address_lookup_service"
 
 module DefraRuby

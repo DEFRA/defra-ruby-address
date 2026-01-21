@@ -1,0 +1,6 @@
+{
+  "error": {
+    "statuscode": 400,
+    "message": "Requested postcode must contain a minimum of two characters"
+  }
+}
