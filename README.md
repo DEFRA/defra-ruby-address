@@ -47,14 +47,23 @@ DefraRuby::Address.configure do |config|
 end
 ```
 
+To use the OS API service, you need to configure your API key from the [OS Data Hub](https://osdatahub.os.uk/). The host defaults to `https://api.os.uk/search/places/v1`:
+
+```ruby
+DefraRuby::Address.configure do |config|
+  config.key = ENV["OS_API_KEY"]
+end
+```
+
 ## Usage
 
-The gem interfaces with 2 address lookups
+The gem interfaces with 3 address lookups
 
 - [OS Places Address Lookup](https://github.com/DEFRA/os-places-address-lookup)
 - [EA Address Facade](https://github.com/DEFRA/ea-address-facade) (repo is private)
+- [OS API](https://docs.os.uk/os-apis/accessing-os-apis/os-places-api) (Ordnance Survey Places API)
 
-The **EA Address Facade** has 2 versions, so the gem provides 3 separate services a host app can use.
+The **EA Address Facade** has 2 versions, and combined with the other lookups, the gem provides 4 separate services a host app can use.
 
 ### Response object
 
@@ -191,6 +200,57 @@ The expected format of each result is
   "blpu_state_code"=>2,
   "postal_address_code"=>"D",
   "logical_status_code"=>1,
+  "source_data_type"=>"dpa",
+  "blpu_state_code_description"=>"In use",
+  "classification_code"=>"CO01",
+  "classification_code_description"=>"Office / Work Studio",
+  "lpi_logical_status_code"=>nil,
+  "lpi_logical_status_code_description"=>nil,
+  "match"=>1.0,
+  "match_description"=>"EXACT",
+  "topography_layer_toid"=>"osgb1000002529079737",
+  "parent_uprn"=>nil,
+  "last_update_date"=>"10/02/2016",
+  "status"=>"APPROVED",
+  "entry_date"=>"12/10/2009",
+  "postal_address_code_description"=>"A record which is linked to PAF",
+  "usrn"=>nil,
+  "language"=>"EN"
+}
+```
+
+### OS API Address Lookup v1
+
+This service calls the [Ordnance Survey Places API](https://docs.os.uk/os-apis/accessing-os-apis/os-places-api) directly, without going through an intermediary service. It returns results mapped to the same format as the EA Address Facade v1.1, making it a drop-in replacement.
+
+> **Note:** The OS API is subject to a 600 transactions-per-minute throttle. Applications using this service should implement their own caching and/or rate limiting to stay within this limit.
+
+```ruby
+response = DefraRuby::Address::OsApiAddressLookupV1Service.run("BS1 5AH")
+
+puts response.results.first["uprn"] # 340116
+```
+
+The expected format of each result matches the EA Address Facade v1.1 format:
+
+```ruby
+{
+  "uprn"=>340116,
+  "address"=>"ENVIRONMENT AGENCY, HORIZON HOUSE, DEANERY ROAD, BRISTOL, BS1 5AH",
+  "organisation"=>"ENVIRONMENT AGENCY",
+  "premises"=>"HORIZON HOUSE",
+  "street_address"=>"DEANERY ROAD",
+  "locality"=>nil,
+  "city"=>"BRISTOL",
+  "postcode"=>"BS1 5AH",
+  "country"=>"United Kingdom",
+  "x"=>358205.03,
+  "y"=>172708.07,
+  "coordinate_system"=>nil,
+  "blpu_state_date"=>"12/10/2009",
+  "blpu_state_code"=>"2",
+  "postal_address_code"=>"D",
+  "logical_status_code"=>"1",
   "source_data_type"=>"dpa",
   "blpu_state_code_description"=>"In use",
   "classification_code"=>"CO01",
