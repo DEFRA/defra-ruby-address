@@ -17,7 +17,7 @@ group :development, :test do
   # New dev's should first create GitHub personal app token and add it to their
   # ~/.bash_profile (or equivalent)
   # https://github.com/skywinder/github-changelog-generator#github-token
-  gem "github_changelog_generator"
+  gem "github_changelog_generator", "~> 1.15.2"
   # Adds step-by-step debugging and stack navigation capabilities to pry using
   # byebug
   gem "pry-byebug"
