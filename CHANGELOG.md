@@ -1,5 +1,25 @@
 # Changelog
 
+## [Unreleased](https://github.com/defra/defra-ruby-address/tree/HEAD)
+
+[Full Changelog](https://github.com/defra/defra-ruby-address/compare/v0.1.0...HEAD)
+
+**Implemented enhancements:**
+
+- Feature/add OS API address lookup service to call API directly [\#17](https://github.com/DEFRA/defra-ruby-address/pull/17) ([brujeo](https://github.com/brujeo))
+
+**Merged pull requests:**
+
+- Feature/update ruby and gemfile dependencies [\#16](https://github.com/DEFRA/defra-ruby-address/pull/16) ([brujeo](https://github.com/brujeo))
+- Switch from Travis CI to GitHub Actions [\#15](https://github.com/DEFRA/defra-ruby-address/pull/15) ([irisfaraway](https://github.com/irisfaraway))
+- Create Dependabot config file [\#14](https://github.com/DEFRA/defra-ruby-address/pull/14) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Fix issue in travis with bundler args [\#13](https://github.com/DEFRA/defra-ruby-address/pull/13) ([Cruikshanks](https://github.com/Cruikshanks))
+- Use multiple rubocop formats in Travis build [\#12](https://github.com/DEFRA/defra-ruby-address/pull/12) ([Cruikshanks](https://github.com/Cruikshanks))
+- Switch to SonarCloud from CodeClimate [\#11](https://github.com/DEFRA/defra-ruby-address/pull/11) ([Cruikshanks](https://github.com/Cruikshanks))
+- Use pry in bin/console [\#10](https://github.com/DEFRA/defra-ruby-address/pull/10) ([Cruikshanks](https://github.com/Cruikshanks))
+- Temp. fix for cc-test-reporter & SimpleCov 0.18 [\#9](https://github.com/DEFRA/defra-ruby-address/pull/9) ([Cruikshanks](https://github.com/Cruikshanks))
+- Fix rubocop cop rename issue [\#8](https://github.com/DEFRA/defra-ruby-address/pull/8) ([Cruikshanks](https://github.com/Cruikshanks))
+
 ## [v0.1.0](https://github.com/defra/defra-ruby-address/tree/v0.1.0) (2019-11-19)
 
 [Full Changelog](https://github.com/defra/defra-ruby-address/compare/04b6877488dfe66778fc57845f9c69fd8b7a9905...v0.1.0)
