@@ -6,8 +6,8 @@ require "rest-client"
 module DefraRuby
   module Address
     class BaseService
-      def self.run(attrs = nil)
-        new.run(attrs)
+      def self.run(*)
+        new.run(*)
       end
     end
   end

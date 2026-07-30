@@ -270,6 +270,22 @@ The expected format of each result matches the EA Address Facade v1.1 format:
 }
 ```
 
+### Coordinate conversion
+
+The gem also provides a pair of services for converting British National Grid easting and northing coordinates (OSGB36) to WGS84 latitude and longitude, and back again, for example to support geospatial queries.
+
+The conversion is pure Ruby, using the 7-parameter Helmert transformation and Transverse Mercator formulae from the OS guide [A guide to coordinate systems in Great Britain](https://www.ordnancesurvey.co.uk/documents/resources/guide-coordinate-systems-great-britain.pdf), and is accurate to around 5 metres.
+
+Unlike the address lookup services these do not call an external API, and they return a plain hash rather than a `Response` object. String arguments are coerced to floats.
+
+```ruby
+DefraRuby::Address::EastingNorthingToLatLonService.run(358_130, 172_688)
+# => { latitude: 51.45161..., longitude: -2.60394... }
+
+DefraRuby::Address::LatLonToEastingNorthingService.run(51.451616, -2.603943)
+# => { easting: 358129.8..., northing: 172687.8... }
+```
+
 ## Contributing to this project
 
 If you have an idea you'd like to contribute please log an issue.
