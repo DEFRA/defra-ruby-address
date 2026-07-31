@@ -48,10 +48,12 @@ module DefraRuby
 
       private
 
+      # Converges within a few iterations for any real coordinates; the cap
+      # guards against non-finite input looping forever
       def converged_phi_prime(northing)
         phi_prime = ((northing - N0) / (A * F0)) + PHI0
 
-        loop do
+        100.times do
           delta = northing - N0 - meridional_arc(phi_prime)
           break if delta < 0.001
 
