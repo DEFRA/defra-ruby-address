@@ -2,12 +2,16 @@
 
 require_relative "address/configuration"
 require_relative "address/ea_address_facade_request"
+require_relative "address/helmert_transformation"
 require_relative "address/no_match_error"
 require_relative "address/response"
+require_relative "address/transverse_mercator_projection"
 
 require_relative "address/services/base_service"
 require_relative "address/services/ea_address_facade_v1_1_service"
 require_relative "address/services/ea_address_facade_v1_service"
+require_relative "address/services/easting_northing_to_lat_lon_service"
+require_relative "address/services/lat_lon_to_easting_northing_service"
 require_relative "address/services/os_api_address_lookup_v1_service"
 require_relative "address/services/os_places_address_lookup_service"
 

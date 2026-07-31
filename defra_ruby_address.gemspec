@@ -1,4 +1,3 @@
-# rubocop:disable Gemspec/RequiredRubyVersion
 # frozen_string_literal: true
 
 $LOAD_PATH.push File.expand_path("lib", __dir__)
@@ -15,6 +14,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/DEFRA/defra-ruby-address"
   spec.summary       = "Defra ruby on rails address lookup gem"
   spec.description   = "Provides a single source of functionality for querying Defra's various address lookup services."
+
+  spec.required_ruby_version = ">= 3.2"
 
   spec.files = Dir["{bin,config,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
 
@@ -33,4 +34,3 @@ Gem::Specification.new do |spec|
   # Use rest-client for external requests, eg. to Companies House
   spec.add_dependency "rest-client", "~> 2.0"
 end
-# rubocop:enable Gemspec/RequiredRubyVersion
