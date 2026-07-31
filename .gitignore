@@ -27,6 +27,9 @@ passenger.*.pid
 # Config files
 # Bundler
 /.bundle
+# As a gem we don't commit the lockfile; dependabot lockfile update PRs were
+# arriving faster than we could review them
+Gemfile.lock
 # direnv config file https://github.com/direnv/direnv
 # (note, this is different to the dotenv-rails gem)
 .envrc
