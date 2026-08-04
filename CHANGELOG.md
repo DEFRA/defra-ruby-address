@@ -1,8 +1,21 @@
 # Changelog
 
-## [Unreleased](https://github.com/defra/defra-ruby-address/tree/HEAD)
+## [v0.4.0](https://github.com/defra/defra-ruby-address/tree/v0.4.0) (2026-08-03)
 
-[Full Changelog](https://github.com/defra/defra-ruby-address/compare/v0.1.0...HEAD)
+[Full Changelog](https://github.com/defra/defra-ruby-address/compare/v0.3.0...v0.4.0)
+
+**Implemented enhancements:**
+
+- Add British National Grid to WGS84 coordinate conversion services [\#38](https://github.com/DEFRA/defra-ruby-address/pull/38) ([jjromeo](https://github.com/jjromeo))
+
+**Merged pull requests:**
+
+- gem version 0.4.0 [\#39](https://github.com/DEFRA/defra-ruby-address/pull/39) ([jjromeo](https://github.com/jjromeo))
+- Feature/update ruby and gemfile dependencies [\#16](https://github.com/DEFRA/defra-ruby-address/pull/16) ([brujeo](https://github.com/brujeo))
+
+## [v0.3.0](https://github.com/defra/defra-ruby-address/tree/v0.3.0) (2026-01-23)
+
+[Full Changelog](https://github.com/defra/defra-ruby-address/compare/v0.1.0...v0.3.0)
 
 **Implemented enhancements:**
 
@@ -10,7 +23,7 @@
 
 **Merged pull requests:**
 
-- Feature/update ruby and gemfile dependencies [\#16](https://github.com/DEFRA/defra-ruby-address/pull/16) ([brujeo](https://github.com/brujeo))
+- gem version 0.3.0 [\#18](https://github.com/DEFRA/defra-ruby-address/pull/18) ([brujeo](https://github.com/brujeo))
 - Switch from Travis CI to GitHub Actions [\#15](https://github.com/DEFRA/defra-ruby-address/pull/15) ([irisfaraway](https://github.com/irisfaraway))
 - Create Dependabot config file [\#14](https://github.com/DEFRA/defra-ruby-address/pull/14) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
 - Fix issue in travis with bundler args [\#13](https://github.com/DEFRA/defra-ruby-address/pull/13) ([Cruikshanks](https://github.com/Cruikshanks))
